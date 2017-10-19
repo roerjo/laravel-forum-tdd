@@ -11,7 +11,9 @@
                     @foreach ($threads as $thread)
                         
                         <article>
-                            <h4>{{ $thread->title }}</h4>
+                            <a href="/threads/{{ $thread->id }}">
+                                <h4>{{ $thread->title }}</h4>
+                            </a>
                             <div class="body">
                                 {{ $thread->body }} 
                             </div>
