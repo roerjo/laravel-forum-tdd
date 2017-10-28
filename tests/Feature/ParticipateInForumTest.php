@@ -15,10 +15,8 @@ class ParticipateInForumTest extends TestCase
     {
         $this->expectException('Illuminate\Auth\AuthenticationException');
 
-        $thread = factory('App\Thread')->create();
-
         $reply = factory('App\Reply')->make();
-        $this->post('/threads/' . $thread->id . '/replies', $reply->toArray());
+        $this->post('/threads/1/replies', $reply->toArray());
     }
     /** @test */
     public function an_authenicated_user_may_participate_in_forum_threads()
