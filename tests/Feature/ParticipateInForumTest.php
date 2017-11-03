@@ -13,6 +13,8 @@ class ParticipateInForumTest extends TestCase
     /** @test */
     public function unauthenicated_users_may_not_add_replies()
     {
+        $this->withoutExceptionHandling();
+        
         $this->expectException('Illuminate\Auth\AuthenticationException');
 
         $reply = make('App\Reply');
